@@ -1,0 +1,603 @@
+/* =====================================================================
+   LibroTdeA design tokens (light / dark) mapped onto Bootstrap variables
+   ===================================================================== */
+
+:root,
+[data-bs-theme='light'] {
+  --app-bg: #f8fafc;
+  --app-surface: #ffffff;
+  --app-surface-2: #f1f5f9;
+  --app-fg: #0f172a;
+  --app-muted: #64748b;
+  --app-border: #e2e8f0;
+  --app-primary: #2563eb;
+  --app-primary-hover: #1d4ed8;
+  --app-primary-rgb: 37, 99, 235;
+  --app-primary-soft: #eff6ff;
+  --app-success: #059669;
+  --app-success-soft: #ecfdf5;
+  --app-danger: #dc2626;
+  --app-danger-soft: #fef2f2;
+  --app-warning-soft: #fffbeb;
+  --app-ebook: #4f46e5;
+  --app-ebook-soft: #eef2ff;
+  --app-soft: #b45309;
+  --app-soft-soft: #fffbeb;
+  --app-hard: #047857;
+  --app-hard-soft: #ecfdf5;
+  --app-shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.04);
+  --app-shadow-lg: 0 20px 40px -12px rgb(15 23 42 / 0.25);
+}
+
+[data-bs-theme='dark'] {
+  --app-bg: #0b1120;
+  --app-surface: #111827;
+  --app-surface-2: #1e293b;
+  --app-fg: #e2e8f0;
+  --app-muted: #94a3b8;
+  --app-border: #1f2a3c;
+  --app-primary: #3b82f6;
+  --app-primary-hover: #60a5fa;
+  --app-primary-rgb: 59, 130, 246;
+  --app-primary-soft: rgb(59 130 246 / 0.14);
+  --app-success: #34d399;
+  --app-success-soft: rgb(52 211 153 / 0.12);
+  --app-danger: #f87171;
+  --app-danger-soft: rgb(248 113 113 / 0.12);
+  --app-warning-soft: rgb(251 191 36 / 0.1);
+  --app-ebook: #a5b4fc;
+  --app-ebook-soft: rgb(129 140 248 / 0.16);
+  --app-soft: #fcd34d;
+  --app-soft-soft: rgb(252 211 77 / 0.12);
+  --app-hard: #6ee7b7;
+  --app-hard-soft: rgb(110 231 183 / 0.12);
+  --app-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --app-shadow-lg: 0 24px 48px -12px rgb(0 0 0 / 0.6);
+}
+
+:root,
+[data-bs-theme] {
+  --bs-body-font-family: 'Fira Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --bs-font-monospace: 'Fira Code', ui-monospace, Consolas, monospace;
+  --bs-body-bg: var(--app-bg);
+  --bs-body-color: var(--app-fg);
+  --bs-emphasis-color: var(--app-fg);
+  --bs-secondary-color: var(--app-muted);
+  --bs-border-color: var(--app-border);
+  --bs-primary: var(--app-primary);
+  --bs-primary-rgb: var(--app-primary-rgb);
+  --bs-link-color: var(--app-primary);
+  --bs-link-hover-color: var(--app-primary-hover);
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-lg: 0.75rem;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-fg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Header ---------- */
+
+.app-header {
+  background: var(--app-surface);
+  border-block-end: 1px solid var(--app-border);
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 20;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+  border-radius: 0.6rem;
+  background: var(--app-primary);
+  color: #fff;
+}
+
+.brand-name {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.brand-sub {
+  font-size: 0.75rem;
+  color: var(--app-muted);
+}
+
+.page-title {
+  font-size: 1.625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  --bs-btn-font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--app-primary);
+  --bs-btn-border-color: var(--app-primary);
+  --bs-btn-hover-bg: var(--app-primary-hover);
+  --bs-btn-hover-border-color: var(--app-primary-hover);
+  --bs-btn-active-bg: var(--app-primary-hover);
+  --bs-btn-active-border-color: var(--app-primary-hover);
+  --bs-btn-disabled-bg: var(--app-primary);
+  --bs-btn-disabled-border-color: var(--app-primary);
+  --bs-btn-focus-shadow-rgb: var(--app-primary-rgb);
+}
+
+[data-bs-theme='dark'] .btn-primary {
+  --bs-btn-color: #0b1120;
+  --bs-btn-hover-color: #0b1120;
+  --bs-btn-active-color: #0b1120;
+  --bs-btn-disabled-color: #0b1120;
+}
+
+.btn-ghost {
+  --bs-btn-color: var(--app-fg);
+  --bs-btn-bg: var(--app-surface);
+  --bs-btn-border-color: var(--app-border);
+  --bs-btn-hover-color: var(--app-fg);
+  --bs-btn-hover-bg: var(--app-surface-2);
+  --bs-btn-hover-border-color: var(--app-border);
+  --bs-btn-active-bg: var(--app-surface-2);
+  --bs-btn-active-border-color: var(--app-border);
+  --bs-btn-active-color: var(--app-fg);
+}
+
+.btn-icon {
+  inline-size: 2.375rem;
+  block-size: 2.375rem;
+  padding: 0;
+}
+
+.btn-icon.btn-edit:hover {
+  color: var(--app-primary);
+  background: var(--app-primary-soft);
+}
+
+.btn-icon.btn-delete:hover {
+  color: var(--app-danger);
+  background: var(--app-danger-soft);
+}
+
+.btn:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible,
+.table-wrapper:focus-visible {
+  outline: 2px solid var(--app-primary);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+/* ---------- Cards / panels ---------- */
+
+.panel {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: var(--app-shadow-sm);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-block-end: 1px solid var(--app-border);
+}
+
+.panel-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.panel-subtitle {
+  font-size: 0.8125rem;
+  color: var(--app-muted);
+  margin: 0;
+}
+
+.icon-tile {
+  display: grid;
+  place-items: center;
+  flex: none;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border-radius: 0.6rem;
+  background: var(--app-primary-soft);
+  color: var(--app-primary);
+}
+
+.icon-tile.is-success {
+  background: var(--app-success-soft);
+  color: var(--app-success);
+}
+
+.icon-tile.is-warning {
+  background: var(--app-warning-soft);
+  color: var(--app-soft);
+}
+
+/* Sticky form panel on wide screens */
+@media (min-width: 1200px) {
+  .form-sticky {
+    position: sticky;
+    inset-block-start: 5.5rem;
+  }
+}
+
+/* ---------- Stats ---------- */
+
+.stat-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--app-muted);
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.type-bar {
+  display: flex;
+  block-size: 0.5rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--app-surface-2);
+}
+
+.type-bar > span {
+  display: block;
+}
+
+.legend-dot {
+  display: inline-block;
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
+}
+
+/* ---------- Type badges (color + icon + text) ---------- */
+
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.type-EBOOK { color: var(--app-ebook); background: var(--app-ebook-soft); }
+.type-SOFTCOPY { color: var(--app-soft); background: var(--app-soft-soft); }
+.type-HARDCOVER { color: var(--app-hard); background: var(--app-hard-soft); }
+.bg-type-EBOOK { background: var(--app-ebook); }
+.bg-type-SOFTCOPY { background: var(--app-soft); }
+.bg-type-HARDCOVER { background: var(--app-hard); }
+
+/* ---------- Search ---------- */
+
+.search-field {
+  position: relative;
+}
+
+.search-field .search-icon {
+  position: absolute;
+  inset-inline-start: 0.85rem;
+  inset-block-start: 50%;
+  translate: 0 -50%;
+  color: var(--app-muted);
+  pointer-events: none;
+}
+
+.search-field .form-control {
+  padding-inline: 2.5rem;
+  block-size: 2.75rem;
+}
+
+.search-field .search-clear {
+  position: absolute;
+  inset-inline-end: 0.35rem;
+  inset-block-start: 50%;
+  translate: 0 -50%;
+  inline-size: 2rem;
+  block-size: 2rem;
+  padding: 0;
+  border: 0;
+  color: var(--app-muted);
+}
+
+/* ---------- Form ---------- */
+
+.form-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-block-end: 0.35rem;
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+  border-color: var(--app-border);
+  background-color: var(--app-surface);
+  color: var(--app-fg);
+  min-block-size: 2.75rem;
+}
+
+.input-group-text {
+  background-color: var(--app-surface-2);
+  color: var(--app-muted);
+  font-size: 0.875rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--app-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--app-primary-rgb), 0.18);
+  background-color: var(--app-surface);
+  color: var(--app-fg);
+}
+
+.form-section-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--app-muted);
+  margin-block: 0 0.75rem;
+}
+
+.form-divider {
+  border-color: var(--app-border);
+  opacity: 1;
+  margin-block: 1.25rem;
+}
+
+.editing-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--bs-border-radius);
+  background: var(--app-primary-soft);
+  color: var(--app-primary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* Show errors only after interaction (:user-invalid); .was-validated covers the submit attempt. */
+.book-form :is(.form-control, .form-select):user-invalid {
+  border-color: var(--bs-form-invalid-border-color);
+}
+
+.book-form :is(.form-control, .form-select):user-invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-danger-rgb), 0.2);
+}
+
+.book-form :is(.form-control, .form-select):user-invalid ~ .invalid-feedback,
+.book-form .input-group:has(:user-invalid) ~ .invalid-feedback,
+.book-form.was-validated .input-group:has(:invalid) ~ .invalid-feedback {
+  display: flex;
+}
+
+.invalid-feedback {
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ---------- Table ---------- */
+
+.table-wrapper {
+  max-block-size: min(640px, 70vh);
+  overflow: auto;
+}
+
+.data-table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--app-fg);
+  --bs-table-hover-bg: var(--app-surface-2);
+  --bs-table-hover-color: var(--app-fg);
+  --bs-table-border-color: var(--app-border);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.data-table > caption {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--app-muted);
+}
+
+.data-table thead th {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 2;
+  background: var(--app-surface-2);
+  color: var(--app-muted);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-block: 0.7rem;
+  white-space: nowrap;
+  border-block-end: 1px solid var(--app-border);
+}
+
+.data-table td,
+.data-table th {
+  vertical-align: middle;
+  padding-inline: 0.875rem;
+}
+
+.data-table tbody td,
+.data-table tbody th {
+  padding-block: 0.75rem;
+}
+
+.data-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+/* Book name stays visible while scrolling sideways */
+.data-table tbody th {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 1;
+  background: var(--app-surface);
+  font-weight: 600;
+  min-inline-size: 12rem;
+}
+
+.data-table tbody tr:hover > th {
+  background: var(--app-surface-2);
+}
+
+.data-table tbody tr.is-editing > * {
+  --bs-table-bg-state: var(--app-primary-soft);
+  background: var(--app-primary-soft);
+}
+
+.book-cover {
+  display: grid;
+  place-items: center;
+  flex: none;
+  inline-size: 2.25rem;
+  block-size: 2.75rem;
+  border-radius: 0.35rem;
+}
+
+.isbn {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.8125rem;
+  color: var(--app-muted);
+}
+
+/* ---------- Empty / loading states ---------- */
+
+.empty-state {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+}
+
+.empty-state .icon-tile {
+  inline-size: 3.25rem;
+  block-size: 3.25rem;
+  margin-block-end: 0.5rem;
+}
+
+/* ---------- Toast ---------- */
+
+.toast-region {
+  position: fixed;
+  inset-block-end: 1.25rem;
+  inset-inline-end: 1.25rem;
+  z-index: 1080;
+  inline-size: min(24rem, calc(100vw - 2.5rem));
+}
+
+.app-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--bs-border-radius-lg);
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-inline-start: 4px solid var(--app-success);
+  box-shadow: var(--app-shadow-lg);
+  animation: toast-in 0.25s ease-out;
+}
+
+.app-toast.is-danger {
+  border-inline-start-color: var(--app-danger);
+}
+
+.app-toast .toast-icon { color: var(--app-success); flex: none; }
+.app-toast.is-danger .toast-icon { color: var(--app-danger); }
+
+.app-toast .toast-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.app-toast .toast-text {
+  font-size: 0.8125rem;
+  color: var(--app-muted);
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(0.75rem); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- Delete confirmation dialog ---------- */
+
+.confirm-dialog {
+  inline-size: min(26rem, calc(100vw - 2rem));
+  padding: 1.5rem;
+  border: 1px solid var(--app-border);
+  border-radius: var(--bs-border-radius-lg);
+  background: var(--app-surface);
+  color: var(--app-fg);
+  box-shadow: var(--app-shadow-lg);
+}
+
+.confirm-dialog .icon-tile {
+  background: var(--app-danger-soft);
+  color: var(--app-danger);
+}
+
+/* Both rules are needed so scrolling over the backdrop or the dialog does not scroll the page */
+.confirm-dialog:modal {
+  overscroll-behavior: contain;
+}
+
+.confirm-dialog::backdrop {
+  background: rgb(15 23 42 / 0.55);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+/* ---------- Motion preferences ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.min-w-0 {
+  min-inline-size: 0;
+}

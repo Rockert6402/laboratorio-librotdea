@@ -1,0 +1,11 @@
+# Perfil "local": copia este archivo como application-local.properties (ignorado por Git)
+# y arranca con: ./mvnw spring-boot:run -Dspring-boot.run.profiles=local
+# Sus valores se suman a application.yml y reemplazan los que coinciden.
+
+# H2 en archivo: los datos se guardan en ./data y se conservan entre ejecuciones.
+spring.datasource.url=jdbc:h2:file:./data/librotdea;AUTO_SERVER=TRUE
+spring.datasource.username=sa
+spring.datasource.password=cambia-esta-contrasena
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false

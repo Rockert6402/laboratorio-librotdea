@@ -1,0 +1,35 @@
+# --- Builds ---
+build/
+target/
+dist/
+dist-ssr/
+.gradle/
+
+# --- Dependencias ---
+node_modules/
+
+# --- Variables de entorno y configuración local ---
+.env
+.env.*
+!.env.example
+application-local.properties
+application-local.yml
+
+# --- Datos locales de H2 (perfil local) ---
+librotdea/backend/data/
+*.mv.db
+*.trace.db
+
+# --- Archivos comprimidos (copias del proyecto) ---
+*.zip
+
+# --- Logs ---
+*.log
+logs/
+
+# --- IDE / sistema ---
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db

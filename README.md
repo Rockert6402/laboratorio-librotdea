@@ -488,7 +488,8 @@ Otros scripts: `npm run build` (genera `dist/`), `npm run preview` (sirve el bui
 
 ## Capturas
 
-Guarda las imágenes en [`docs/capturas/`](docs/capturas/) con estos nombres para que aparezcan aquí.
+Capturas tomadas con la aplicación en ejecución (perfil `default`, con libros de ejemplo).
+Las imágenes están en [`docs/capturas/`](docs/capturas/).
 
 ### Pantalla principal
 
@@ -497,6 +498,8 @@ Guarda las imágenes en [`docs/capturas/`](docs/capturas/) con estos nombres par
 ### Registrar un libro
 
 ![Formulario de nuevo libro](docs/capturas/crear-libro.png)
+
+![Notificación de libro registrado](docs/capturas/crear-libro-exito.png)
 
 ### Editar un libro
 
